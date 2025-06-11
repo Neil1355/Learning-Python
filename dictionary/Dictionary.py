@@ -8,6 +8,6 @@ print(thisDict)
 
 myDict = thisDict.copy()
 print(myDict)
-
+#print
 thisDict.clear()
 print(thisDict)
