@@ -1,4 +1,5 @@
 import mysql.connector
+
 def read(connection):
     print("Inside read function")
     cursor = connection.cursor()
