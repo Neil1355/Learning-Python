@@ -13,7 +13,7 @@ def read(connection):
         print("Error during read:", err)
     finally:
         cursor.close()
- 
+
 def insertRecord(connection):
     try:
         cursor = connection.cursor()
@@ -26,8 +26,7 @@ def insertRecord(connection):
         print("Error during insert:", err)
     finally:
         cursor.close()
- 
- 
+
 try:
     mydb = mysql.connector.connect(
         host="localhost",
