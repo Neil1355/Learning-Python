@@ -1,50 +1,67 @@
-# Program to generate a new list by adding 100 to each value using map and lambda
-numbers = [10, 20, 30, 40, 50]
-add_100 = list(map(lambda x: x + 100, numbers))
-print(add_100)
+class Book:
+    def __init__(self, title, author, copies_available):
+        self.title = title
+        self.author = author
+        self.copies_available = copies_available
 
-# Program to generate a new list by calculating power of 2 for each number using map and lambda
-numbers = [1, 2, 3, 4, 5]
-powers_of_2 = list(map(lambda x: x ** 2, numbers))
-print(powers_of_2)
+    def display_info(self):
+        print(f"{self.title} by {self.author} - Copies: {self.copies_available}")
 
+    def borrow_book(self):
+        if self.copies_available > 0:
+            self.copies_available -= 1
+            return True
+        return False
 
-dict_a = [{'name': 'python', 'points': 10}, {'name': 'java', 'points': 8}] 
-filter(lambda x : x['name'] == 'python', dict_a) 
-
-def fahrenheit(T): 
-    return ((float(9)/5)*T + 32) 
- 
-def celsius(T): 
-    return (float(5)/9)*(T-32) 
-
-temperatures = (36.5, 37, 37.5, 38, 39) 
-
-F = map(fahrenheit, temperatures) 
-C = map(celsius, F) 
-
-temperatures_in_Fahrenheit = list(map(fahrenheit, temperatures)) 
-temperatures_in_Celsius = list(map(celsius, temperatures_in_Fahrenheit)) 
-
-print(temperatures_in_Fahrenheit) 
-print(temperatures_in_Celsius) 
+    def return_book(self):
+        self.copies_available += 1
 
 
-C = [39.2, 36.5, 37.3, 38, 37.8]  
-F = list(map(lambda x: (float(9)/5)*x + 32, C)) 
-print(F) 
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def show_books(self):
+        for book in self.books:
+            book.display_info()
+
+    def find_book(self, title):
+        for book in self.books:
+            if book.title.lower() == title.lower():
+                return book
+        return None
 
 
-from functools import reduce 
-f = lambda a,b: a if (a > b) else b 
-ans = reduce(f, [47,11,42,102,13]) 
-print(ans) 
+class Member:
+    def __init__(self, name):
+        self.name = name
+        self.borrowed_books = []
 
-# get length of each string using map and lambda
-print(list(map(lambda s: len(s), ["apple", "banana", "kiwi", "grape"])))
+    def borrow(self, library, title):
+        book = library.find_book(title)
+        if book and book.borrow_book():
+            self.borrowed_books.append(title)
+            print(f"{self.name} borrowed '{title}'")
+        else:
+            print(f"'{title}' is not available.")
 
-# capitalize each word from a list using map and lambda
-print(list(map(lambda w: w.capitalize(), ["hello", "world", "python", "rocks"])))
+    def return_book(self, library, title):
+        if title in self.borrowed_books:
+            book = library.find_book(title)
+            if book:
+                book.return_book()
+                self.borrowed_books.remove(title)
+                print(f"{self.name} returned '{title}'")
 
-# write a program with map and lambda to process a list to generate a new list by adding 100 to each value
-print(list(map(lambda x: x + 100, [10, 20, 30, 40])))
+library = Library("Central Library")
+book1 = Book("Harry Potter", "Baburao", 20)
+library.add_book(book1)
+
+member = Member("Vivanshi")
+library.show_books()
+member.borrow(library, "Harry Potter")
+member.return_book(library, "Harry Potter")

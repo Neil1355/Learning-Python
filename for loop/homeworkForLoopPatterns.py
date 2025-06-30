@@ -4,9 +4,10 @@ for i in range (1,6):
     for j in range(1,i+1):
         print("*", end=" ")
     print()
-    
 print()
+
 #Left half triangle
+
 k=6
 for i in range(1,6):
     for space in range(1,k):
@@ -15,8 +16,8 @@ for i in range(1,6):
     for j in range (1,i+1):
         print("*", end=" ")
     print()
-    
 print()
+
 # Perfect pyramid
 
 k=4
@@ -27,7 +28,6 @@ for i in range(1,10,2):
     for j in range(0,i):
         print("*", end=" ")
     print()
-    
 print()
 
 #perfect pyramid reversed
@@ -48,9 +48,7 @@ for i in range(5,0,-1):
     for j in range(1,i+1):
         print("*", end=" ")
     print()
-    
 print()
-
 
 #inverted left half pyramid
 
@@ -62,8 +60,8 @@ for i in range(5,0,-1):
     for j in range(1,i+1):
         print("*", end=" ")
     print()
-    
 print()
+
 #parallelogram
 
 for i in range(0,5):
@@ -72,9 +70,8 @@ for i in range(0,5):
     for j in range(0,5):
         print("*", end=" ")
     print()
-    
-    
 print()
+
 #Hollow square
 
 for i in range(0,6):
@@ -84,9 +81,8 @@ for i in range(0,6):
         else:
          print(" ", end = " ")
     print()
-
-
 print()
+
 #hollow triangle
 k = 6  
 n=6
