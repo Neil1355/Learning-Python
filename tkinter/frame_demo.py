@@ -10,7 +10,6 @@ tkinter.Label(frame, text = 'relx=1 , rely = 1').place(relx=1 , rely = 1)
 
 root.mainloop()
 
-
 import tkinter as tk
 
 window = tk.Tk()

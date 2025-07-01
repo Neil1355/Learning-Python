@@ -18,7 +18,6 @@ print(f"Present Month:{today.month}")
 # to print the present date 
 print(f"Present Date:{today.day}") 
 
-
 # By using now(), We will get both current  
 # date and time Storing current time and 
 # date into a variable 
@@ -47,8 +46,6 @@ import time;
 localtime = time.asctime( time.localtime(time.time()) ) 
 print ("Local current time :", localtime)
 
- 
-
 import calendar 
 cal = calendar.month(2008, 1) 
 print ("Here is the calendar:" )
@@ -75,7 +72,6 @@ print(sys.path)
 print(sys.version) 
 
 # importing sqrt() and factorial from the 
-
 # module math 
 
 import math as mm 
