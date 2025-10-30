@@ -1,4 +1,3 @@
-#take care of spacing and placement.
 def StrReversed(String):
     revstr = String[::-1]
     return revstr
