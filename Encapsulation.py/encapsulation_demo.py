@@ -10,7 +10,6 @@ class Library:
      def getBookName(self): 
         print(f"the id of the book is {self.__bookId} and The name of book is {self.bookName}") 
 
-
 book = Library(101, "The Witchers") 
 book.getBookName() 
 book.setBookName("The Witchers Returns") 
