@@ -21,4 +21,3 @@ if __name__ == "__main__":
     obj = B()
     obj.show()
     obj.display()
-         
