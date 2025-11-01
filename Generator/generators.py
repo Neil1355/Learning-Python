@@ -12,6 +12,7 @@ def my_gen():
     yield n
     
 a = my_gen()
+
 print(a)
 print(next(a))
 print(next(a))
