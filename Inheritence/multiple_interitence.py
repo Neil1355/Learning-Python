@@ -33,3 +33,4 @@ class external(teacher, student):
 if __name__ == "__main__":
     obj = external()
     obj.show()
+    
